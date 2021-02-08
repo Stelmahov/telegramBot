@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Component
 @Slf4j
-public class Bot extends TelegramLongPollingBot {
+public class TelegramBotService extends TelegramLongPollingBot {
 
     private final CityService cityService;
 
@@ -25,7 +25,7 @@ public class Bot extends TelegramLongPollingBot {
     private String botToken;
 
     @Autowired
-    public Bot(CityService cityService) {
+    public TelegramBotService(CityService cityService) {
         this.cityService = cityService;
     }
 
@@ -48,7 +48,7 @@ public class Bot extends TelegramLongPollingBot {
             message.setChatId(String.valueOf(update.getMessage().getChatId()));
             if(city.isEmpty()){
                 message.setText("Город " + name + " не найден");
-            } else if (city.get().getInfo() == null) {
+            } else if (city.get().getInfo() == null || city.get().getInfo().equals("")) {
                 message.setText("По городу " + name + " пока нет информации");
             } else {
                 message.setText(city.get().getInfo());

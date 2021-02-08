@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CityUpdateDto {
-    String name;
-    String info;
+    private String name;
+    private String info;
 }

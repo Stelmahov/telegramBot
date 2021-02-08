@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String name;
-    String info;
+    private Integer id;
+    private String name;
+    private String info;
 }

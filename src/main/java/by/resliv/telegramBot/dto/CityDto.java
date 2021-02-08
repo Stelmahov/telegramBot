@@ -11,8 +11,9 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CityDto {
+    private Integer id;
     @NotBlank
     @NotNull
-    String name;
-    String info;
+    private String name;
+    private String info;
 }

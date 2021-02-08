@@ -1,0 +1,18 @@
+# configs
+/application*.yml
+
+# Eclipse
+/.classpath
+/.settings/
+/.project
+
+# IntelliJ
+.idea
+*.iml
+*.ipr
+*.iws
+/out/
+
+# Maven
+target/
+*.log/

@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Component
 @Slf4j
-public class Bot extends TelegramLongPollingBot {
+public class TelegramBotService extends TelegramLongPollingBot {
 
     private final CityService cityService;
 
@@ -25,7 +25,7 @@ public class Bot extends TelegramLongPollingBot {
     private String botToken;
 
     @Autowired
-    public Bot(CityService cityService) {
+    public TelegramBotService(CityService cityService) {
         this.cityService = cityService;
     }
 

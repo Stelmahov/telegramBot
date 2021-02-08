@@ -4,11 +4,12 @@ services:
   db:
     image: postgres:latest
     environment:
+      name: db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345
       POSTGRES_DB: resliv_travel
     ports:
-    - 5433:5432
+    - 5432:5432
 
   webserver:
     image: stelmakhov/telegram_bot:latest
@@ -17,6 +18,6 @@ services:
     depends_on:
       - db
     environment:
-      DB_URL: jdbc:postgresql://docker.for.win.localhost:5432/resliv_travel
-      NAME: #enter botName
-      TOKEN: #enter botToken
+      DB_URL: jdbc:postgresql://db:5432/resliv_travel
+      NAME: #enter bot name
+      TOKEN: #enter bot token

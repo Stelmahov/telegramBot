@@ -1,0 +1,9 @@
+bot:
+  name: ${NAME}
+  token: ${TOKEN}
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL}
+    username: postgres
+    password: 12345

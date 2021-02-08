@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: resliv_travel
+    ports:
+    - 5433:5432
+
+  webserver:
+    image: stelmakhov/telegram_bot:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      DB_URL: jdbc:postgresql://docker.for.win.localhost:5432/resliv_travel
+      NAME: #enter botName
+      TOKEN: #enter botToken

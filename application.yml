@@ -1,0 +1,9 @@
+#bot:
+#  name: ${NAME}
+#  token: ${TOKEN}
+#spring:
+#  datasource:
+#    url: ${DB_URL}
+#    username: postgres
+#    password: 12345
+

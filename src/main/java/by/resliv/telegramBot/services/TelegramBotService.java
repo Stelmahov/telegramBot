@@ -48,7 +48,7 @@ public class TelegramBotService extends TelegramLongPollingBot {
             message.setChatId(String.valueOf(update.getMessage().getChatId()));
             if(city.isEmpty()){
                 message.setText("Город " + name + " не найден");
-            } else if (city.get().getInfo() == null) {
+            } else if (city.get().getInfo() == null || city.get().getInfo().equals("")) {
                 message.setText("По городу " + name + " пока нет информации");
             } else {
                 message.setText(city.get().getInfo());
